@@ -924,6 +924,8 @@ header {
         transition-duration: 0.01ms !important;
     }
 }
+
+}
 /* Floating rounded header */
 .floating-header {
   position: fixed;
