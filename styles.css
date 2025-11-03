@@ -924,3 +924,64 @@ header {
         transition-duration: 0.01ms !important;
     }
 }
+/* Floating rounded header */
+.floating-header {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 60;
+  width: min(1100px, calc(100% - 48px));
+  background: linear-gradient(180deg, rgba(11,13,23,0.85), rgba(6,8,15,0.75));
+  backdrop-filter: blur(10px);
+  border-radius: 9999px;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+  padding: 10px 14px;
+  transition: all 280ms ease;
+}
+
+/* Nav link style */
+.floating-header .nav-item {
+  color: #dbeafe; /* light */
+  font-weight: 500;
+  text-decoration: none;
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: background 180ms ease, color 180ms ease, transform 180ms;
+}
+.floating-header .nav-item:hover {
+  background: rgba(167,139,250,0.08);
+  color: #e9d5ff;
+  transform: translateY(-2px);
+}
+
+/* Login circle */
+.login-circle {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: linear-gradient(90deg,#8b5cf6,#3b82f6);
+  box-shadow: 0 8px 20px rgba(59,130,246,0.16);
+  border: 2px solid rgba(255,255,255,0.06);
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.login-circle:hover { transform: scale(1.04); box-shadow: 0 10px 28px rgba(139,92,246,0.18); }
+
+/* Shrinked state when scrolled */
+.floating-header.shrink {
+  top: 10px;
+  padding: 6px 12px;
+  box-shadow: 0 6px 20px rgba(2,6,23,0.7);
+  transform: translateX(-50%) scale(0.98);
+}
+
+/* Mobile: show nav in small screens as hidden (we keep existing mobile menu) */
+@media (max-width: 768px) {
+  .floating-header { width: calc(100% - 32px); padding: 8px; }
+  .floating-header .nav-item { display: none; } /* hide center links on mobile */
+  #mobileMenuToggle { display: inline-flex; }
+   }
