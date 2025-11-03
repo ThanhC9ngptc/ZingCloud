@@ -14,67 +14,46 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Header -->
-    <header id="header" class="header-expanded">
-        <div class="header-container">
-            <div class="header-content">
-                <!-- Logo -->
-                <div class="logo-container">
-                    <div class="logo-badge">
-                        <img src="logo.png" alt="Zing Cloud Logo" width="40" height="40" style="border-radius: 8px;">
-                    </div>
-                    <span class="logo-text">Zing Cloud</span>
-                </div>
-                
-                <!-- Desktop Navigation -->
-                <nav class="desktop-nav">
-                    <a href="#home" class="nav-link">Home</a>
-                    <a href="#services" class="nav-link">Dịch vụ</a>
-                    <a href="#support" class="nav-link">Hỗ trợ</a>
-                    <a href="#contact" class="nav-link">Liên hệ</a>
-                </nav>
-                
-                <!-- Auth Buttons -->
-                <div class="auth-buttons">
-                    <button class="btn-login btn-zoom" data-testid="button-login" aria-label="Đăng nhập">Đăng nhập</button>
-                    <button class="btn-register btn-zoom" data-testid="button-register" aria-label="Đăng ký">Đăng ký</button>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <button class="mobile-menu-btn" id="mobileMenuBtn" data-testid="button-mobile-menu" aria-label="Menu">
-                    <svg class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </header>
-    
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-content">
-            <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Đóng menu">
-                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-            <nav class="mobile-nav">
-                <a href="#home" class="mobile-nav-link">Home</a>
-                <a href="#services" class="mobile-nav-link">Dịch vụ</a>
-                <a href="#support" class="mobile-nav-link">Hỗ trợ</a>
-                <a href="#contact" class="mobile-nav-link">Liên hệ</a>
-                <button class="btn-login btn-zoom mobile-auth-btn">Đăng nhập</button>
-                <button class="btn-register btn-zoom mobile-auth-btn">Đăng ký</button>
-            </nav>
-        </div>
-    </div>
 
+    <!-- Floating Rounded Header -->
+<header class="floating-header" id="floatingHeader" role="banner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="Zing Cloud" class="w-10 h-10 rounded-lg object-cover">
+        <span class="font-semibold text-white text-lg tracking-wide">𝙕𝙞𝙣𝙜𝘾𝙡𝙤𝙪𝙙</span>
+      </div>
+
+      <!-- Nav (center) -->
+      <nav class="hidden md:flex gap-6 items-center">
+        <a href="#home" class="nav-item">Home</a>
+        <a href="#services" class="nav-item">Dịch vụ</a>
+        <a href="#support" class="nav-item">Hỗ trợ</a>
+        <a href="#contact" class="nav-item">Liên hệ</a>
+      </nav>
+
+      <!-- Right: login circle -->
+      <div class="flex items-center gap-4">
+        <button id="btnLoginCircle" class="login-circle" aria-label="Đăng nhập">
+          <!-- bạn có thể thay bằng <img src="avatar.png"> nếu muốn avatar -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+
+        <!-- Mobile menu toggle (keeps your mobile control) -->
+        <button id="mobileMenuToggle" class="md:hidden p-2 rounded-lg" aria-label="Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+    
     <!-- Main Content -->
     <main id="mainContent">
         <!-- Hero Section -->
